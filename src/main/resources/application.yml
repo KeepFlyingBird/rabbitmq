@@ -1,1 +1,25 @@
+spring:
+  application:
+    name: rabbit
+  rabbitmq:
+    host: 192.168.10.202
+    port: 5762
+    username: guest
+    password: guest
+    virtual-host: /
+    publisher-confirm-type: correlated #发送者开启 confirm 确认机制
+    publisher-returns: true #发送者开启 return 确认机制
 
+    #声明队列
+    queue:
+      queue: queue.test
+      exchange: exchange.test
+      routingkey: routingkey.test
+    queue2:
+      queue: queue.test2
+      exchange: exchange.test2
+      routingkey: routingkey.test2
+
+
+server:
+  port: 8081
